@@ -14,6 +14,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TrendingdMoviesComponent } from './components/MoviesComponents/trending-movies/trending-movies.component';
 import { PopularTvShowsComponent } from './components/TvShowsComponents/popular-tv-shows/popular-tv-shows.component';
 import { TopRatedTvShowsComponent } from './components/TvShowsComponents/top-rated-tv-shows/top-rated-tv-shows.component';
+import { TrendingTvShowsComponent } from './components/TvShowsComponents/trending-tv-shows/trending-tv-shows.component';
+import { TvShowDetailsComponent } from './components/TvShowsComponents/tv-show-details/tv-show-details.component';
+import { LoginComponent } from './components/Authentification/login/login.component';
+import { RegisterComponent } from './components/Authentification/register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,10 @@ import { TopRatedTvShowsComponent } from './components/TvShowsComponents/top-rat
     TrendingdMoviesComponent,
     PopularTvShowsComponent,
     TopRatedTvShowsComponent,
+    TrendingTvShowsComponent,
+    TvShowDetailsComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

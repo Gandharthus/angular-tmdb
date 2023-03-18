@@ -1,29 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-// import { ActivatedRoute } from '@angular/router';
-// import { TmdbService } from '../../tmdb.service';
-
-// @Component({
-//   selector: 'app-movie-details',
-//   templateUrl: './movie-details.component.html',
-//   styleUrls: ['./movie-details.component.css']
-// })
-// export class MovieDetailsComponent implements OnInit {
-//   movie: any;
-
-//   constructor(private tmdbService: TmdbService, private route: ActivatedRoute) { }
-
-//   ngOnInit() {
-//     this.route.params.subscribe(params => {
-//       const id = params['id'];
-//       if (id) {
-//         this.tmdbService.getMovieById(id).subscribe(data => {
-//           this.movie = data;
-//         });
-//       }
-//     });
-//   }
-// }
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TmdbService } from '../../../tmdb.service';
@@ -35,6 +9,7 @@ import { TmdbService } from '../../../tmdb.service';
 })
 export class MovieDetailsComponent implements OnInit {
   movie: any;
+  cast : any;
 
   constructor(
     private route: ActivatedRoute,
@@ -42,9 +17,18 @@ export class MovieDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10); // <-- convertit l'ID en nombre
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.tmdbService.getMovieDetails(id).subscribe((data) => {
       this.movie = data;
+
+      this.tmdbService.getMovieGenres(id).subscribe((genres) => {
+        this.movie.genres = genres;
+        console.log(this.movie.genres);
+      });
+
+      this.tmdbService.getMovieCredits(id).subscribe((actors) => {
+        this.cast = actors.cast.slice(0, 10);
+      });
     });
   }
 }

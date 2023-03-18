@@ -4,7 +4,7 @@
       class="detailspage-bg relative h-52 md:h-64 lg:h-80 xl:h-[470px] w-full image-with-gradient2 hidden sm:block"
     >
       <img
-        [src]="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path"
+        [src]="'https://image.tmdb.org/t/p/w500' + tv.backdrop_path"
         class="object-cover w-full h-full rounded-lg"
         alt=""
       />
@@ -21,9 +21,7 @@
               >
                 <div>
                   <img
-                    [src]="
-                      'https://image.tmdb.org/t/p/w500' + movie.poster_path
-                    "
+                    [src]="'https://image.tmdb.org/t/p/w500' + tv.poster_path"
                     class="object-cover w-36 h-[220px] sm:w-[142px] md:w-[160px] md:h-[246px] lg:w-[80%] lg:h-full xl:w-[70%] xl:h-full rounded-lg"
                     alt=""
                   />
@@ -35,21 +33,20 @@
               <div
                 class="detailspage-title text-center lg:text-left text-2xl md:text-4xl font-semibold mb-6"
               >
-                {{ movie.name }}
+                {{ tv.name }}
               </div>
+
               <div
                 class="detailspage-story text-center lg:text-left text-sm sm:text-sm md:text-sm lg:text-sm xl:text-base mb-6"
               >
-                {{ movie.overview }}
+                {{ tv.overview }}
               </div>
 
               <div
                 class="flex justify-center lg:justify-start mb-6 text-md md:text-base"
               >
-                <div *ngFor="let genre of movie.genres">
-                  <div
-                    class="py-2 px-3 rounded-lg border border-slate-500 mr-4"
-                  >
+                <div *ngFor="let genre of tv.genres">
+                  <div class="py-2 px-3 rounded-lg border border-slate-500 mr-4">
                     {{ genre }}
                   </div>
                 </div>

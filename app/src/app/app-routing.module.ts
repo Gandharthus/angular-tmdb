@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './components/Authentification/login/login.component';
+import { RegisterComponent } from './components/Authentification/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { MovieDetailsComponent } from './components/MoviesComponents/movie-details/movie-details.component';
 import { MoviesComponent } from './components/MoviesComponents/movies/movies.component';
+import { TvShowDetailsComponent } from './components/TvShowsComponents/tv-show-details/tv-show-details.component';
 import { TvShowsComponent } from './components/TvShowsComponents/tv-shows/tv-shows.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
   },
   {
     path: 'movies',
@@ -21,6 +28,10 @@ const routes: Routes = [
   {
     path: 'tvShows',
     component: TvShowsComponent,
+  },
+  {
+    path: 'tvshow/:id',
+    component: TvShowDetailsComponent,
   },
 
 ];

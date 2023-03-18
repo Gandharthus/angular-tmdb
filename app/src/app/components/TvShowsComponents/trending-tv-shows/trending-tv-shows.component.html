@@ -3,16 +3,19 @@
     class="text-white text-xl md:text-2xl font-semibold mb-4 flex items-center"
   >
     <div>
-      <img src="/assets/icons/fire.svg" alt="" class="w-6 h-6 mr-2" />
+      <img src="/assets/icons/hashtag.svg" alt="" class="w-6 h-6 mr-2" />
     </div>
-    <div>Popular Tv Shows</div>
+    <div>Trending This Week</div>
   </div>
   <div
     class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4"
   >
-    <div *ngFor="let tv of tvShows" class="flex justify-center rounded-lg mb-3">
+    <div
+      *ngFor="let tv of tvShows"
+      class="flex justify-center rounded-lg mb-3"
+    >
       <div
-        [routerLink]="['/tvshow/', tv.id]"
+        [routerLink]="['/tvshow', tv.id]"
         class="popular-movies-content flex justify-center rounded-lg mb-3"
       >
         <div class="popular-movies-card rounded-lg cursor-pointer">
@@ -37,7 +40,7 @@
             >
               <i class="bx bxs-star mr-2 text-xl text-orange-500"></i>
               <div class="text-gray-300 text-sm">
-                {{ tv.vote_average }}
+                {{ tv.vote_average.toFixed(1) }}
               </div>
             </div>
           </div>

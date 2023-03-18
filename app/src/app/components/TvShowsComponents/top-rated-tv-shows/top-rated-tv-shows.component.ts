@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TmdbService } from '../../../tmdb.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-rated-tv-shows',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopRatedTvShowsComponent implements OnInit {
 
-  constructor() { }
+  top_rated: any[] = [];
+
+  constructor(private tmdbService: TmdbService, private router: Router) {}
 
   ngOnInit(): void {
+    this.tmdbService.getToRatedTvShows().subscribe((data) => {
+      this.top_rated = data.results.slice(0, 6);
+    });
   }
 
 }

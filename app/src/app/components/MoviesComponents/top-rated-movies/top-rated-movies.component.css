@@ -1,4 +1,4 @@
-.topmovie-container {
+.toprated-container {
   background: rgb(20, 88, 129);
   background: linear-gradient(
     0deg,
@@ -35,17 +35,17 @@
   max-width: 100%;
   z-index: 2;
 }
-.topmovie-one {
+.toprated-one {
   position: absolute;
   bottom: 5px;
   left: 0;
   z-index: 3;
 }
-.topmovie-others {
+.toprated-others {
   width: 100%;
   display: flex;
 }
-.topmovie-title-content {
+.toprated-title-content {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;

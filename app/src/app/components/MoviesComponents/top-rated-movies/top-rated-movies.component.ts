@@ -17,8 +17,4 @@ export class TopRatedMoviesComponent implements OnInit {
       this.top_rated = data.results.slice(0, 5);
     });
   }
-
-  // viewMovieDetails(id: number) {
-  //   this.router.navigate(['/movie', id]);
-  // }
 }
