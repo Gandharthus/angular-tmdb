@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angularprojectemdb": {
+      "hosting": {
+        "app": [
+          "angularprojectemdb"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angularprojectemdb"
+  }
+}

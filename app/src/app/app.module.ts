@@ -18,6 +18,10 @@ import { TrendingTvShowsComponent } from './components/TvShowsComponents/trendin
 import { TvShowDetailsComponent } from './components/TvShowsComponents/tv-show-details/tv-show-details.component';
 import { LoginComponent } from './components/Authentification/login/login.component';
 import { RegisterComponent } from './components/Authentification/register/register.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,7 @@ import { RegisterComponent } from './components/Authentification/register/regist
     LoginComponent,
     RegisterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, provideFirebaseApp(() => initializeApp(environment.firebase)), provideAuth(() => getAuth()), provideFirestore(() => getFirestore())],
   providers: [],
   bootstrap: [AppComponent],
 })
